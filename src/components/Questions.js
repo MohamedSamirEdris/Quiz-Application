@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Questions({ questions_answers , register }) {
+function Questions({ questions_answers, register }) {
     return (
         <div className="card">
             <div className="card-body">
@@ -12,11 +12,17 @@ function Questions({ questions_answers , register }) {
                             {question.answers.map((answer) => {
                                 return (
                                     <div className="col" key={answer.id}>
-                                        <input type='radio' {...register(question.id.toString())} />
-                                        {answer.text}
+                                        <div className="form-check">
+                                            <input className="form-check-input" type='radio' {...register(question.id.toString())} />
+                                            <label className="form-check-label" >
+                                                {answer.text}
+                                            </label>
+                                        </div>
+
                                     </div>
                                 )
                             })}
+                            <div className="col-12"><hr/></div>
                         </div>
                     )
                 })}
