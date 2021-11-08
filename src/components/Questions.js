@@ -1,8 +1,10 @@
 import React from 'react'
 
 function Questions({ questions_answers, register }) {
+
+    
     return (
-        <div className="card">
+        <div className="card mt-5">
             <div className="card-body">
 
                 {questions_answers.map((question) => {
@@ -13,7 +15,7 @@ function Questions({ questions_answers, register }) {
                                 return (
                                     <div className="col" key={answer.id}>
                                         <div className="form-check">
-                                            <input className="form-check-input" type='radio' {...register(question.id.toString())} />
+                                            <input className="form-check-input" type='radio'  value={answer.id} {...register(question.id.toString())} />
                                             <label className="form-check-label" >
                                                 {answer.text}
                                             </label>

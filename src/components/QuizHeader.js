@@ -2,6 +2,8 @@ import React from 'react'
 
 function QuizHeader({data:{title , description , url , score}}) {
 
+    
+
     return (
         <div className="card mt-5"  >
             <div className="card-body">
